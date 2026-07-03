@@ -22,7 +22,7 @@ jobs:
         run: bash scripts/02_vars_demo.sh
         env: 
           APP_NAME: ${{vars.APP_NAME}}
-          TARGET_ENV: ${{vars.APP_NAME}}
+          TARGET_ENV: ${{vars.TARGET_ENV}}
           APP_VERSION: ${{vars.VERSION}}
       - name: Report hochladen
         uses: actions/upload-artifact@v4
