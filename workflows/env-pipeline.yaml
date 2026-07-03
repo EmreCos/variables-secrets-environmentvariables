@@ -1,0 +1,24 @@
+name: environment variables ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+env:
+  COURSE_NAME: "Github Actions Devops Untericht"
+  ENVIRONMENT_NAME: "Schulungsumebung bzw. Github"
+jobs:
+  env-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository herunterladen
+        uses: actions/checkout@v4
+
+      - name: Skripte ausführbar machen
+        run: chmod +x scripts/*.sh
+
+      - name: Umgebungsvariable  test 
+        run: echo "Kursname ist $ COURSE_NAME und die Umngebung ist $ENVIRONMENT_NAME"
+
