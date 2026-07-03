@@ -1,0 +1,32 @@
+name: environment variables ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  env-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository herunterladen
+        uses: actions/checkout@v4
+
+      - name: Skripte ausführbar machen
+        run: chmod +x scripts/*.sh
+
+
+
+      - name: Umgebungsvariablen skript ausführen
+        run: bash scripts/02_vars_demo.sh
+        env: 
+          APP_NAME: ${{vars.APP_NAME}}
+          TARGET_ENV: ${{vars.APP_NAME}}
+          APP_VERSION: ${{vars.VERSION}}
+      - name: Report hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: variable-report
+          path: output/variables-report.txt  
+
