@@ -20,5 +20,5 @@ jobs:
         run: chmod +x scripts/*.sh
 
       - name: Umgebungsvariable  test 
-        run: echo "Kursname ist $ COURSE_NAME und die Umngebung ist $ENVIRONMENT_NAME"
+        run: echo "Kursname ist $COURSE_NAME und die Umngebung ist $ENVIRONMENT_NAME"
 
