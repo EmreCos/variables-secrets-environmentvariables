@@ -22,3 +22,6 @@ jobs:
       - name: Umgebungsvariable  test 
         run: echo "Kursname ist $COURSE_NAME und die Umngebung ist $ENVIRONMENT_NAME"
 
+      - name: Umgebungsvariablen skript ausführen
+        run: bash scripts/01_env_demo.sh
+
