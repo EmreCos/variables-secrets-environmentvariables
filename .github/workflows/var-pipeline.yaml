@@ -1,4 +1,4 @@
-name: environment variables ci
+name:  variables ci
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     branches:
       - master
 jobs:
-  env-test:
+  var-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
 
 
 
-      - name: Umgebungsvariablen skript ausführen
+      - name: variablen skript ausführen
         run: bash scripts/02_vars_demo.sh
         env: 
           APP_NAME: ${{vars.APP_NAME}}
