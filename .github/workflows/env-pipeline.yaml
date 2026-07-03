@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Repository herunterladen
         uses: actions/checkout@v4
-
+      - name: Informationen vor dem start 
+        run: echo "Die pipeline wird ausgeführt von $GITHUB_ACTOR und du befindest dich im Branch $GITHUB_REF_NAME die id für den CI lauf ist $GITHUB_JOB"
       - name: Skripte ausführbar machen
         run: chmod +x scripts/*.sh
 
