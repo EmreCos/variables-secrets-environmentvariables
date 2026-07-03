@@ -26,4 +26,9 @@ jobs:
         run: bash scripts/01_env_demo.sh
         env: 
           STEP_MESSAGE: "Diese variable ist nur hier gesetzt "
+      - name: Report hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: environment-report
+          path: output/env-report.txt          
 
