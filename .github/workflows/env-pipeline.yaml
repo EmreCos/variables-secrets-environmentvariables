@@ -24,4 +24,6 @@ jobs:
 
       - name: Umgebungsvariablen skript ausführen
         run: bash scripts/01_env_demo.sh
+        env: 
+          STEP_MESSAGE: "Diese variable ist nur hier gesetzt "
 
